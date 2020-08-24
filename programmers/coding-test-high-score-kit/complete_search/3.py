@@ -18,3 +18,10 @@ def solution(brown, yellow):
     # 한 번 구하면 종료하는 이유 : 가로 >= 세로
     return answer
 
+# import math
+# def solution(brown, yellow):
+#             w+h                   (w+h)**2     -       4wh
+#                                           = (w-h)**2
+#     w = ((brown+4)/2 + math.sqrt(((brown+4)/2)**2-4*(brown+yellow)))/2
+#     h = ((brown+4)/2 - math.sqrt(((brown+4)/2)**2-4*(brown+yellow)))/2
+#     return [w,h]
