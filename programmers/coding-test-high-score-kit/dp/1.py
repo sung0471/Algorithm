@@ -1,3 +1,5 @@
+# N으로 표현
+
 def solution(N, number):
     answer = 0
 
@@ -13,4 +15,8 @@ def solution(N, number):
         else:
             pass
 
-    return answer
+    return answer if answer <= 8 else -1
+
+
+a = solution(5, 12)
+print(a)
