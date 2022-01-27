@@ -13,34 +13,20 @@ for test_case in range(1, T + 1):
         player = 0 if i % 2 == 0 else 1
 
         # 하나의 숫자가 3번나오면 끝내기
-        if num not in card_num:
-            card_num[player][num] = 1
-        else:
-            card_num[player][num] += 1
-            if card_num[player][num] == 3:
-                result = player
-                break
+        card_num[player][num] += 1
+        if card_num[player][num] == 3:
+            result = player
+            break
 
         # 연속된 숫자가 3개 이상인지 판단하기
-        if num == 0 and card_num[player][num] and card_num[player][num + 1] and card_num[player][num + 2]:
+        if num < 8 and card_num[player][num] and card_num[player][num + 1] and card_num[player][num + 2]:
             result = player
             break
         if 0 < num < 9 and card_num[player][num - 1] and card_num[player][num] and card_num[player][num + 1]:
             result = player
             break
-        if 1 < num < 8:
-            if card_num[player][num - 2] and card_num[player][num - 1] and card_num[player][num]:
-                result = player
-                break
-            elif card_num[player][num - 1] and card_num[player][num] and card_num[player][num + 1]:
-                result = player
-                break
-            elif card_num[player][num] and card_num[player][num + 1] and card_num[player][num + 2]:
-                result = player
-                break
-        if num == 9 and card_num[player][num - 2] and card_num[player][num - 1] and card_num[player][num]:
+        if 1 < num and card_num[player][num - 2] and card_num[player][num - 1] and card_num[player][num]:
             result = player
             break
 
     print('#{} {}'.format(test_case, result + 1))
-
